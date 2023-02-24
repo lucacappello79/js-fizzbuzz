@@ -12,37 +12,50 @@ ALTRIMENTI stampo in console il numero stesso
 */
 
 let tabEl = document.getElementById("tab");
+let titleEL = document.getElementById("titolo")
+titleEL.style.fontWeight = "bold"
 let newCard;
 
 
 for (let i = 1; i <= 100; i++) {
-    // console.log(i)
+
     let newCard = document.createElement("div");
     tabEl.append(newCard);
-
+    tabEl.style.width = "1200px"
+    tabEl.style.gap = "30px"
+    tabEl.style.backgroundColor = "#083b4c"
+    newCard.style.width = `calc(100% / 7 - (30px / 7 * 6))`;
+    newCard.style.height = "100px";
+    newCard.style.display = "flex";
+    newCard.style.alignItems = "center";
+    newCard.style.justifyContent = "center";
+    newCard.style.fontWeight = "bold";
+    
 
     if (i % 3 === 0 && !(i % 5 === 0)) {
 
         console.log("Fizz");
         newCard.innerHTML = "Fizz"
-        newCard.style.backgroundColor = "cornflowerblue";
+        newCard.style.backgroundColor = "#0cd6a1";
         
     } else if (i % 5 === 0 && !(i % 3 === 0)) {
 
         console.log("Buzz");
         newCard.innerHTML = "Buzz"
-        newCard.style.backgroundColor = "burlywood";
+        newCard.style.backgroundColor = "#ffd166";
 
     } else if (i % 3 === 0 && i % 5 === 0) {
 
         console.log("FizzBuzz");
         newCard.innerHTML = "FizzBuzz"
-        newCard.style.backgroundColor = "salmon";
+        newCard.style.backgroundColor = "#f0466f";
 
     } else {
 
         console.log(i);
         newCard.innerHTML = i
-        newCard.style.backgroundColor = "gray";
+        newCard.style.backgroundColor = "#1389b2";
+        //newCard.style.width = "100px";
+        //newCard.style.height = "100px";
     }
 }
