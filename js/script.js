@@ -43,6 +43,6 @@ for (let i = 1; i <= 100; i++) {
 
         console.log(i);
         newCard.innerHTML = i
-        newCard.style.backgroundColor = "cadetblue";
+        newCard.style.backgroundColor = "gray";
     }
 }
