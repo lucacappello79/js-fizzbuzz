@@ -23,15 +23,30 @@ for (let i = 1; i <= 100; i++) {
     tabEl.append(newCard);
     tabEl.style.width = "1200px"
     tabEl.style.gap = "30px"
+    tabEl.style.padding = "60px 100px"
     tabEl.style.backgroundColor = "#083b4c"
+    newCard.style.cssText = `width: calc(100% / 7 - (30px / 7 * 6)); height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold;`;
+
+
+    newCard.addEventListener("mouseover", function() {
+        newCard.style.border = "2px solid orange";
+        newCard.style.transition = "border-color 0.5s ease";
+      });
+      
+    newCard.addEventListener("mouseout", function() {
+        newCard.style.border = "2px solid red";
+        newCard.style.transition = "border-color 0.5s ease";
+      });
+    
+    /*
     newCard.style.width = `calc(100% / 7 - (30px / 7 * 6))`;
     newCard.style.height = "100px";
     newCard.style.display = "flex";
     newCard.style.alignItems = "center";
     newCard.style.justifyContent = "center";
     newCard.style.fontWeight = "bold";
+    */
     
-
     if (i % 3 === 0 && !(i % 5 === 0)) {
 
         console.log("Fizz");
@@ -49,6 +64,9 @@ for (let i = 1; i <= 100; i++) {
         console.log("FizzBuzz");
         newCard.innerHTML = "FizzBuzz"
         newCard.style.backgroundColor = "#f0466f";
+        //newCard.style.borderColor = "white"; not working, why? I had to add the border style attribute , in this case solid, for the border to actually show
+        //newCard.style.borderWidth = "2px";
+        newCard.style.border = "1px solid white";
 
     } else {
 
